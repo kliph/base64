@@ -1,0 +1,17 @@
+*~*
+*#*
+
+target/
+
+.nrepl-port
+figwheel_server.log
+
+.projectile
+
+resources/public/js/
+out/
+
+*jar
+pom.xml
+
+.cljs_node_repl/
