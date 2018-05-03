@@ -7,7 +7,8 @@
   :min-lein-version "2.5.3"
   :dependencies [[org.clojure/clojure "1.10.0-alpha4"]
                  [org.clojure/clojurescript "1.10.238"]]
-  :plugins [[lein-cljsbuild "1.1.7"]]
+  :plugins [[lein-cljsbuild "1.1.7"]
+            [lein-doo "0.1.7"]]
   :profiles {:dev {:source-paths ["src"]
                    :dependencies [[com.cemerick/piggieback "0.2.2"]]
                    :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
@@ -19,4 +20,11 @@
                                                     :optimizations :none
                                                     :target :nodejs
                                                     :recompile-dependents true
-                                                    :source-map true}}]}}})
+                                                    :source-map true}}
+                                        {:id "test"
+                                         :source-paths ["src" "test"]
+                                         :compiler {:output-to "js/test.js"
+                                                    :output-dir "js/test/out"
+                                                    :main "base64.runner"
+                                                    :target :nodejs
+                                                    :optimizations :none}}]}}})

@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+echo "🌯  Running tests..."
+lein doo node test once
