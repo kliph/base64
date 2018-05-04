@@ -14,4 +14,4 @@ out/
 *jar
 pom.xml
 
-.cljs_node_repl/
+.cljs_*_repl/
