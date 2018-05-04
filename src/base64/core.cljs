@@ -37,11 +37,17 @@
      out-byte4]))
 
 (defn encode-byte-array [bytes]
-  (let [output []]
-    output))
+  (let [triplets (partition-all 3 bytes)]
+    (->> triplets
+         (map encode-triplet)
+         flatten
+         (map #(get alphabet %)))))
 
 (defn base64 [s]
-  s)
+  (->> s
+       string-to-byte-array
+       encode-byte-array
+       clojure.string/join))
 
 #_(defn base64 [s]
   (goog.crypt.base64/encodeString s))

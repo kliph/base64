@@ -7,7 +7,7 @@
     (is (= (core/base64 "")
            ""))))
 
-#_(deftest encode
+(deftest encode
   (testing "padding two spaces"
     (is (= (core/base64 "f")
            "Zg==")))
@@ -42,3 +42,7 @@
            [16 20 8 64]))
     (is (= (core/encode-triplet [65 nil nil])
            [16 16 64 64]))))
+
+(deftest encode-byte-array [bytes]
+  (is (= (core/encode-byte-array [102])
+         ["Z" "g" "=" "="])))
