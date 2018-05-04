@@ -39,6 +39,6 @@
            [16 20 9 3])))
   (testing "returns padding bytes when encoding fewer than 4 bytes"
     (is (= (core/encode-triplet [65 66 nil])
-           [16 20 9 64]))
+           [16 20 8 64]))
     (is (= (core/encode-triplet [65 nil nil])
-           [16 20 64 64]))))
+           [16 16 64 64]))))
