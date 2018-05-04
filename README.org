@@ -2,4 +2,4 @@
 * Starting a REPL
 In a =cljs= file:
 
-=M-x cider-jack-in-clojurescript=
+=M-x cider-jack-in-clojurescript= or =C-c M-J=
