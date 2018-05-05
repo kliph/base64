@@ -10,13 +10,19 @@
 (deftest encode
   (testing "padding two spaces"
     (is (= (core/base64 "f")
-           "Zg==")))
+           "Zg=="))
+    (is (= (core/base64 "foob")
+           "Zm9vYg==")))
   (testing "padding one space"
     (is (= (core/base64 "fo")
-           "Zm8=")))
+           "Zm8="))
+    (is (= (core/base64 "fooba")
+           "Zm9vYmE=")))
   (testing "no padding"
     (is (= (core/base64 "foo")
-           "Zm9v"))))
+           "Zm9v"))
+    (is (= (core/base64 "foobar")
+           "Zm9vYmFy"))))
 
 (deftest nil-to-0
   (testing "encodes nil as 0"

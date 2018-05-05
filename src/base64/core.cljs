@@ -1,6 +1,8 @@
 (ns base64.core
   (:require [goog.crypt.base64]
-            [goog.crypt]))
+            [goog.crypt]
+            [clojure.string]
+            [clojure.tools.cli :refer [parse-opts]]))
 
 
 (def alphabet
@@ -51,3 +53,13 @@
 
 #_(defn base64 [s]
   (goog.crypt.base64/encodeString s))
+
+
+(defn -main [& args]
+  (let [opts (parse-opts args [])
+        s (->> opts
+               :arguments
+               (clojure.string/join " "))]
+    (println (base64 s))))
+
+(set! *main-cli-fn* -main)

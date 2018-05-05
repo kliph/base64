@@ -6,7 +6,8 @@
   :clean-targets ^{:protect false} [:target-path "out"]
   :min-lein-version "2.5.3"
   :dependencies [[org.clojure/clojure "1.10.0-alpha4"]
-                 [org.clojure/clojurescript "1.10.238"]]
+                 [org.clojure/clojurescript "1.10.238"]
+                 [org.clojure/tools.cli "0.3.7"]]
   :plugins [[lein-cljsbuild "1.1.7"]
             [lein-doo "0.1.7"]]
   :profiles {:dev {:source-paths ["src"]

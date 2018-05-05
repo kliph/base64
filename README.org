@@ -3,3 +3,14 @@
 In a =cljs= file:
 
 =M-x cider-jack-in-clojurescript= or =C-c M-J=
+* To build
+#+BEGIN_SRC sh
+  ./script/build
+
+#+END_SRC
+* To run
+#+BEGIN_SRC sh
+  node js/base64.js foobar
+  Zm9vYmFy
+
+#+END_SRC
